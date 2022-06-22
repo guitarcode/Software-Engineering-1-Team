@@ -95,7 +95,7 @@ public class ClothesService {
             clothesEntityList = clothesRepository.findAllByUserAndSeasonAndColorAndTypeAndMaterial(user,season,color,type,material);
         List<ClothesReturnDto> clothesReturnDtoList = new ArrayList<>();
         for (ClothesEntity c : clothesEntityList){
-            ClothesReturnDto clothesReturnDto = new ClothesReturnDto(c,"../webapp/clothesImage/"+c.getClothesImage());
+            ClothesReturnDto clothesReturnDto = new ClothesReturnDto(c,c+c.getClothesImage());
             clothesReturnDtoList.add(clothesReturnDto);
         }
         response.put("success",true);
@@ -105,7 +105,7 @@ public class ClothesService {
     public Map<String, Object> updateClothes(Long clothesId, UserEntity user){
         Map<String,Object> response = new HashMap<>();
         ClothesEntity clothes = clothesRepository.findById(clothesId).orElse(null);
-        ClothesReturnDto clothesReturnDto = new ClothesReturnDto(clothes,getFilePath()+clothes.getClothesImage());
+        ClothesReturnDto clothesReturnDto = new ClothesReturnDto(clothes,"../webapp/clothesImage/"+clothes.getClothesImage());
         //수정하려는 옷과 접속한 user의 정보가 일치하지 않으면 null 반환
         if (clothes.getUser() != user ){
             response.put("success",false);
@@ -121,7 +121,7 @@ public class ClothesService {
         Map<String,Object> response = new HashMap<>();
         ClothesEntity clothes = clothesRepository.findById(clothesId).orElse(null);
         String clothesImageName = clothes.getClothesImage();
-        File file = new File(getFilePath()+clothesImageName);
+        File file = new File("../webapp/clothesImage/"+clothesImageName);
         file.delete();
         try {
             String loc = imageSave(newImage,clothesId);
