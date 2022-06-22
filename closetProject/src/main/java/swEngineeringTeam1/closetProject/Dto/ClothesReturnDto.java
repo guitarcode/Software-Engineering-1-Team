@@ -8,6 +8,7 @@ import swEngineeringTeam1.closetProject.Entity.ClothesEntity;
 @Getter
 @Setter
 @NoArgsConstructor
+
 public class ClothesReturnDto {
     private Long clothesId;
     private String clothesImage;

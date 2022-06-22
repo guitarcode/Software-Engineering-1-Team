@@ -10,7 +10,7 @@ import swEngineeringTeam1.closetProject.Entity.UserEntity;
 @Setter
 @NoArgsConstructor
 public class ClothesDto {
-    private Long clothesId;
+    //private Long clothesId;
     private String season;
     private String color;
     private String type;
