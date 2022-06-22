@@ -25,7 +25,6 @@ function logout(){
 function loadFile(input){
   const all=document.getElementById('image-show')
   all.innerHTML="";
-    document.getElementById('image-show').removeAttribute()
     var file = input.files[0]
 
     var newImage=document.createElement("img");
