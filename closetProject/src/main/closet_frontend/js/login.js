@@ -22,11 +22,7 @@ function login() {
       console.log(data)
       if(data.success==true) {
         alert(data.message)  
-      // 스토리지에 저장
-      localStorage.setItem('userCode', data.userCode)     
-      // 로그인 결과 반영
-    //   edit.classList.remove("hide")
-    //   join.classList.add("hide")
+      localStorage.setItem('userCode', data.userCode)    
       window.location = "http://127.0.0.1:5500/html/main.html"}
       else{
         alert(data.message)

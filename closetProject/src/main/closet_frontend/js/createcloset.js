@@ -58,12 +58,11 @@ function addfile(){
       .then((data) => {
         if(data.success==true) {
           alert(data.message);
-        }
+          console.log("경로이동해야댐")
+          window.location = "http://127.0.0.1:5500/html/main.html"}
         else{
           alert(data.message);
         }
-    }).catch(error => {
-      console.error(error)
     })
 
     console.log("fetch 요청은 성공")

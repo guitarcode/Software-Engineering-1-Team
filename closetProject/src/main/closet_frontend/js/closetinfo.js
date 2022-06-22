@@ -30,7 +30,8 @@ function deletefile(){
       }).then(response=>response.json())
       .then(data=>{
         console.log(data)
-        alert(data.message)})
+        alert(data.message)
+        window.location = "http://127.0.0.1:5500/html/mycloset.html"})
       .catch(error=>console.log(error));
 }
 
@@ -121,8 +122,8 @@ function updatefile(){
     }).then((response) => response.json())
     .then((data) => {
       if(data.success==true) {
-        alert(data.success);
-      }
+        alert(data.success)
+        window.location = "http://127.0.0.1:5500/html/mycloset.html"}
       else{
         alert(data.message);
       }

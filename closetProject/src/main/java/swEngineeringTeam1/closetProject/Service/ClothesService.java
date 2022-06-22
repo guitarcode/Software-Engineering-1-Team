@@ -165,7 +165,7 @@ public class ClothesService {
     public String imageSave (MultipartFile file,Long clothesId) throws IOException {
         String originalFileName = file.getOriginalFilename();
 
-        String root = "/Users/choisemin/Desktop/workspace/SW-Engineering/closetProject/src/main/closet_frontend/webapp/clothesImage/";
+        String root = "C:\\Users\\gram1\\Desktop\\swproject\\Software-Engineering-1-Team\\closetProject\\src\\main\\closet_frontend\\webapp\\clothesImage\\";
         File dest = new File(root+clothesId+"_"+originalFileName);
         file.transferTo(dest);
         return clothesId+"_"+originalFileName;
