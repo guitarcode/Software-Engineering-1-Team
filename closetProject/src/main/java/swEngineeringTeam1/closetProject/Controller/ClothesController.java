@@ -36,7 +36,7 @@ public class ClothesController {
             @RequestParam(required = false) String color,
             @RequestParam(required = false) String type,
             @RequestParam(required = false) String material,
-            @RequestParam String userCode) throws IOException {
+            @RequestParam(required = false) String userCode) throws IOException {
         //Long userCode = getUserCodeFromRequest(request);
         Long longUserCode = Long.parseLong(userCode);
         UserEntity user = getUser(longUserCode);
