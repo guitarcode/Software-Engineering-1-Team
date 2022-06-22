@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <script type="module" src="/js/main.js"></script> 
+    
 
     <header>
         <div class="main_title">
@@ -20,9 +20,10 @@
     </header>
     <nav>
         <ul class="nav_items">
-            <li class="item"><a class="cody_hyperlink" onclick="{config}" href="./mycody.html">나의 옷장</a></li>
+            <li class="item"><a class="cody_hyperlink" onclick="{config}" href="./mycloset.html">나의 옷장</a></li>
             <li class="item"><a class="cody_hyperlink" href="./mycody.html">나의 코디</a></li>
-            <li class="item"><a class="cody_hyperlink" id= "login" href="./login.html">로그인</a></li>
+            <li class="item"><a class="cody_hyperlink" id= "login" onClick="loginout()">로그인</a></li>
+
         </ul>
     <div class="br_tag_box">
         <div class="br_tag"></div>
@@ -55,7 +56,7 @@
         </div>
         </section>
         <section class="main_closet">
-            <img src="../img/메인_옷.png">
+            <img id = "mainviewimg" src="../img/메인_옷.png">
         </section>
     </div>
 </div>
@@ -68,6 +69,7 @@
             <li class="f_item">about</li>
         </ul>
     </footer>
+    <script src="/js/main.js"></script> 
 </body>
 
 </html>

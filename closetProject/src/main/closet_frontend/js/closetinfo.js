@@ -1,5 +1,30 @@
-function loadFile(input){
+function loginout(){
+  console.log("클릭")
+  if(localStorage.getItem('userCode')!=null){
+    console.log("로그아웃")
+    logout();
+    window.location.reload()
+  }
+  else{
+   window.location="http://127.0.0.1:5500/html/login.html"}
 
+}
+
+window.onload=function main(){
+    if(localStorage.getItem('userCode')!=null)
+        document.getElementById("login").textContent="로그아웃";     
+}
+
+
+
+function logout(){
+  localStorage.removeItem('userCode')
+  alert("로그아웃되었습니다.")
+}
+
+function loadFile(input){
+  const all=document.getElementById('image-show')
+  all.innerHTML="";
   var file = input.files[0]
 
   var newImage=document.createElement("img");
@@ -13,6 +38,7 @@ function loadFile(input){
 
   var container = document.getElementById('image-show');
   container.appendChild(newImage);
+  console.log(newImage)
   console.log("이미지 삽입 성공")
 }   
 
@@ -30,7 +56,8 @@ function deletefile(){
       }).then(response=>response.json())
       .then(data=>{
         console.log(data)
-        alert(data.message)})
+        alert(data.message)
+        window.location = "http://127.0.0.1:5500/html/mycloset.html"})
       .catch(error=>console.log(error));
 }
 
@@ -77,6 +104,16 @@ window.onload=function file(){
         break;
       }
     }
+    const viewimage=document.createElement("img");
+    viewimage.setAttribute("class",'img')
+    viewimage.src=json.clothes.clothesImage;
+    viewimage.style.width = "70%";
+    viewimage.style.height = "70%";
+    viewimage.style.objectFit = "contain";
+    var container = document.getElementById('image-show');
+    container.appendChild(viewimage);
+    console.log(viewimage);
+
   })
 }
 
@@ -121,15 +158,17 @@ function updatefile(){
     }).then((response) => response.json())
     .then((data) => {
       if(data.success==true) {
-        alert(data.success);
-      }
+        window.location="http://127.0.0.1:5500/html/mycloset.html"
+        return false}
       else{
         alert(data.message);
       }
   }).catch(error => {
     console.error(error)
   })
-
   console.log("fetch 요청은 성공")
 
 }
+
+
+

@@ -1,5 +1,31 @@
-function loadFile(input){
+function loginout(){
+  console.log("클릭")
+  if(localStorage.getItem('userCode')!=null){
+    console.log("로그아웃")
+    logout();
+    window.location.reload()
+  }
+  else{
+   window.location="http://127.0.0.1:5500/html/login.html"}
 
+}
+
+window.onload=function main(){
+    if(localStorage.getItem('userCode')!=null)
+        document.getElementById("login").textContent="로그아웃";     
+}
+
+
+
+function logout(){
+  localStorage.removeItem('userCode')
+  alert("로그아웃되었습니다.")
+}
+
+function loadFile(input){
+  const all=document.getElementById('image-show')
+  all.innerHTML="";
+    document.getElementById('image-show').removeAttribute()
     var file = input.files[0]
 
     var newImage=document.createElement("img");
@@ -7,8 +33,8 @@ function loadFile(input){
 
     newImage.src = URL.createObjectURL(file);   
 
-    newImage.style.width = "70%";
-    newImage.style.height = "70%";
+    newImage.style.width = "300px";
+    newImage.style.height = "400px";
     newImage.style.objectFit = "contain";
 
     var container = document.getElementById('image-show');
@@ -57,13 +83,10 @@ function addfile(){
       }).then((response) => response.json())
       .then((data) => {
         if(data.success==true) {
-          alert(data.message);
-        }
+          window.location = "http://127.0.0.1:5500/html/mycloset.html"}
         else{
           alert(data.message);
         }
-    }).catch(error => {
-      console.error(error)
     })
 
     console.log("fetch 요청은 성공")

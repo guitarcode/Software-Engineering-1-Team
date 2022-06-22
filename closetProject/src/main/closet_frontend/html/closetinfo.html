@@ -20,14 +20,14 @@
         <ul class="nav_items">
             <li class="item"><a class="cody_hyperlink" href="./mycloset.html">나의 옷장</a></li>
             <li class="item"><a class="cody_hyperlink" href="./mycody.html">나의 코디</a></li>
-            <li class="item">로그인</li>
-        </ul>
+            <li class="item"><a class="cody_hyperlink" id= "login" onClick="loginout()">로그인</a></li>
+            </ul>
         <div class="br_tag_box">
             <div class="br_tag"></div>
         </div>
     </nav>
-    <section class="main_section">
-        <span class="section_top">
+    <div class="main_section">
+        <div class="section_top">
             <form action="/action_page.php">
                 <label for="category">카테고리를 선택해주세요:</label>
                 <div class="top_box">
@@ -65,8 +65,8 @@
                     </span>
                 </div>
             </form>
-        </span>
-        <span class="section_box">
+        </div>
+        <div class="section_box">
             <ul class="img_list">
                 <li>
                     
@@ -81,16 +81,19 @@
             <div class="button">
                 <label for="사진 업로드"></label>
             </div>
-            <form method="post" enctype="multipart/form-data">
-                <input class="UploadPic" id="UploadPic" type="file" value="사진 업로드" accept="image/*" onchange="loadFile(this)">
-            </form>
+            <div>
+                <form method="post" enctype="multipart/form-data">
+                    <input class="UploadPic" id="UploadPic" type="file" value="사진 업로드" accept="image/*" onchange="loadFile(this)">
+                </form>
+            </div>
             <div class="image-show" id="image-show"></div>
-            <span><input class="filter_add" type="submit" value="수정하기" onclick="updatefile()"></span>
-            <span><input class="filter_add" type="submit" value="삭제하기" onclick="deletefile()"></span>
+           
                 
-        </span>
+        </div>
+        <div><button id="updateBtn" type="button" onclick="updatefile()">수정하기</div>
+        <div><button id="deleteBtn" type="button" onclick="deletefile()">삭제하기</div>
         
-    </section>
+    </div>
         <div class="br_tagb"></div>
     <footer>
         <ul class="footer_items">
