@@ -28,13 +28,14 @@
     </nav>
     <section>
         <div class="section_top">
+            
             <form action="/action_page.php">
-                <label for="cars">카테고리를 선택해주세요:</label>
+                <label for="category">카테고리를 선택해주세요:</label>
                 <div class="top_box">
                     <span class="filter_box">
-                        <div>
+                        
                         <ul class="top_select">
-                            <select name="weather" id="weather">
+                            <select name="season" id="season">
                                 <option value="spring">봄</option>
                                 <option value="summer">여름</option>
                                 <option value="autumn">가을</option>
@@ -54,7 +55,7 @@
                                 <option value="blue">파란색</option>
                                 <option value="brown">갈색</option>
                             </select>
-                            <select name="texture" id="texture">
+                            <select name="material" id="material">
                                 <option value="cotton">면</option>
                                 <option value="cordroy">코듀로이</option>
                                 <option value="poly">폴리에스테르</option>
@@ -67,8 +68,10 @@
                     <span><input class="filter_add" type="button" value="추가하기" onClick="location.href='createcloset.html'"></span>
                 </div>
             </form>
+            <span><input class="filter_add" type="button" value="검색" onclick="search()"></span>
         </div>
         <div class="section_box">
+            
             <ul class="img_list">
             
             </ul>

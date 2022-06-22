@@ -31,31 +31,36 @@ function addfile(){
     const UploadPic=document.getElementById('UploadPic')
     console.log(UploadPic)
 
-    const selecteddata = {}
-    selecteddata.season= season.options[season.selectedIndex].value
-    selecteddata.type=type.options[type.selectedIndex].value
-    selecteddata.color=color.options[color.selectedIndex].value
-    selecteddata.material=material.options[material.selectedIndex].value
 
-    const data = new FormData();
-    data.append('jsonClothesDto',selecteddata)
-    data.append('file',UploadPic.files[0])
-    console.log("11");
-    for (var pair of data.entries()) {
-      console.log(pair[0]+ ', ' + pair[1]); 
-  }
+    const formdata= new FormData();
+    formdata.append('file',UploadPic.files[0])
+    formdata.append(
+      "jsonClothesDto",
+      JSON.stringify({
+          season: season.options[season.selectedIndex].value,
+          type:type.options[type.selectedIndex].value,
+          color:color.options[color.selectedIndex].value,
+          material: material.options[material.selectedIndex].value,
+      })
+    )
+    formdata.append('userCode',localStorage.getItem('userCode'))
+
+
+    console.log(UploadPic.files[0]);
+    console.log(localStorage.getItem('userCode'));
+
 
 
     fetch('http://localhost:8080/mycloset/', {
         method: "POST",
-        body: data
+        body: formdata
       }).then((response) => response.json())
       .then((data) => {
         if(data.success==true) {
-          alert("옷 등록 완료!");
+          alert(data.message);
         }
         else{
-          alert("옷 등록 실패");
+          alert(data.message);
         }
     }).catch(error => {
       console.error(error)
