@@ -1,9 +1,27 @@
+function loginout(){
+  console.log("클릭")
+  if(localStorage.getItem('userCode')!=null){
+    console.log("로그아웃")
+    logout();
+    window.location.reload()
+  }
+  else{
+   window.location="http://127.0.0.1:5500/html/login.html"}
+
+}
+
 window.onload=function main(){
-    if(localStorage.getItem('sessionid')!=null){
-        document.getElementById("login").textContent="로그아웃";
-        document.getElementById("로그인").setAttribute("onclick",logout())
+    if(localStorage.getItem('userCode')!=null){
+        document.getElementById("login").textContent="로그아웃";   
+        document.getElementById('mainviewimg').src="../img/userclothes.png"
     }
-console.log("메인실행");
+}
+
+
+
+function logout(){
+  localStorage.removeItem('userCode')
+  alert("로그아웃되었습니다.")
 }
 
 const weather = document.querySelector(".weather");
