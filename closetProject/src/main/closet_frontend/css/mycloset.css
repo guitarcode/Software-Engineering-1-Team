@@ -107,10 +107,6 @@ img{
 .footer_items {
     display: flex;
     justify-content: center;
-    list-style: none;
-    flex-basis: 100px;
-    position: fixed;
-    bottom: 20px;
     width: 100%;
 }
 
@@ -129,14 +125,15 @@ img{
 
 .br_tagb {
     width: 100%;
-    position: fixed;
     height: 1px;
     box-shadow: 0px 0px 2px 0px gray;
     font-size: 2px;
     background-color: black;
     color: black;
-    bottom: 80px;
-    position: fixed;
+    bottom: 70px;
+    margin-top: 150px;
+
+
 }
   
   #popup {
@@ -183,4 +180,11 @@ img{
 .create_cody_img{
     width:100px;
     cursor: pointer;
+}
+
+.img_list{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content:flex-start ;
 }

@@ -56,13 +56,11 @@
 
 .mycody_1 {
     display: flex;
-    border: 1px solid red;
 
 }
 
 .mycody_2 {
     display: flex;
-    border: 1px solid red;
 
 }
 
@@ -117,6 +115,7 @@ img {
 
 .main_section {
     display: flex;
+    height:500px
 }
 #addBtn{
     display:flex;
@@ -126,13 +125,17 @@ img {
     display:flex;
 }
 
+
+
 .section_box {
-    width:100%;
+    width:40%;
     height:100%;
     border: 1px solid black;
 }
 
 .section_top {
+    width:30%;
+    height:100%;
     border: 1px solid black;
 }
 
@@ -144,12 +147,9 @@ img {
 .footer_items {
     display: flex;
     justify-content: center;
-    list-style: none;
-    flex-basis: 100px;
-    position: fixed;
-    bottom: 20px;
     width: 100%;
 }
+
 
 .f_item {
     font-size: 20px;
@@ -166,15 +166,17 @@ img {
 
 .br_tagb {
     width: 100%;
-    position: fixed;
     height: 1px;
     box-shadow: 0px 0px 2px 0px gray;
     font-size: 2px;
     background-color: black;
     color: black;
-    bottom: 80px;
-    position: fixed;
+    bottom: 70px;
+    margin-top: 150px;
+
+
 }
+
 
 #popup {
     display: flex;

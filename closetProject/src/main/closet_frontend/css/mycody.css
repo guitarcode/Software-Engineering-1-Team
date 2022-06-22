@@ -67,9 +67,8 @@ img{
 .footer_items {
     display: flex;
     justify-content: center;
-    list-style: none;
+    width: 100%;
 }
-
 .f_item {
     font-size: 20px;
     display: flex;
@@ -90,7 +89,10 @@ img{
     font-size: 2px;
     background-color: black;
     color: black;
-    bottom: 80px;
+    bottom: 70px;
+    margin-top: 150px;
+
+
 }
   
   #popup {
