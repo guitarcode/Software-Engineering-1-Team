@@ -95,7 +95,7 @@ public class ClothesService {
             clothesEntityList = clothesRepository.findAllByUserAndSeasonAndColorAndTypeAndMaterial(user,season,color,type,material);
         List<ClothesReturnDto> clothesReturnDtoList = new ArrayList<>();
         for (ClothesEntity c : clothesEntityList){
-            ClothesReturnDto clothesReturnDto = new ClothesReturnDto(c,getFilePath()+c.getClothesImage());
+            ClothesReturnDto clothesReturnDto = new ClothesReturnDto(c,"../webapp/clothesImage/"+c.getClothesImage());
             clothesReturnDtoList.add(clothesReturnDto);
         }
         response.put("success",true);
@@ -165,7 +165,7 @@ public class ClothesService {
     public String imageSave (MultipartFile file,Long clothesId) throws IOException {
         String originalFileName = file.getOriginalFilename();
 
-        String root = getFilePath();
+        String root = "/Users/choisemin/Desktop/workspace/SW-Engineering/closetProject/src/main/closet_frontend/webapp/clothesImage/";
         File dest = new File(root+clothesId+"_"+originalFileName);
         file.transferTo(dest);
         return clothesId+"_"+originalFileName;
