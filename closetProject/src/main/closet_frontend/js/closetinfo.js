@@ -32,8 +32,8 @@ function loadFile(input){
 
   newImage.src = URL.createObjectURL(file);   
 
-  newImage.style.width = "70%";
-  newImage.style.height = "70%";
+  newImage.style.width = "30%";
+  newImage.style.height = "30%";
   newImage.style.objectFit = "contain";
 
   var container = document.getElementById('image-show');
@@ -107,8 +107,8 @@ window.onload=function file(){
     const viewimage=document.createElement("img");
     viewimage.setAttribute("class",'img')
     viewimage.src=json.clothes.clothesImage;
-    viewimage.style.width = "70%";
-    viewimage.style.height = "70%";
+    viewimage.style.width = "30%";
+    viewimage.style.height = "30%";
     viewimage.style.objectFit = "contain";
     var container = document.getElementById('image-show');
     container.appendChild(viewimage);
